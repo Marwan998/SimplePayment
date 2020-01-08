@@ -8,10 +8,31 @@
     href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <form class="login">
+        <p>User Name:</p>
+        <input class="form-control" type="text" name="uname" value="">
+        <br>
+        <p>Password:</p>
+        <input class="form-control" type="password" name="password" value="">
+        <br>
+        <button type="button" name="button" onclick="login()" class="btn btn-primary">Login</button>
+        <p class="tip">Just write anything or leave blank but you should consider some sequrity though</p>
+      </form>
+    </div>
+  </div>
   <app-root></app-root>
+  <script type="text/javascript">
+    function login() {
+      document.getElementById('loginModal').style.display="none";
+    }
+  </script>
 </body>
 </html>

@@ -1,0 +1,60 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #paymentForm="ngForm">
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="number" [(ngModel)]="payment.amount"
+          class="form-control"
+          id="amount"
+          name="amount"
+          placeholder="Enter the amount"
+          required #amount="ngModel">
+      </div>
+      <div [hidden]="!amount.pristine" class="alert alert-danger">Amount is required</div>
+      <div class="form-group">
+        <label for="currency">Currency</label>
+        <select [(ngModel)]="payment.currencyCode"
+          class="form-control"
+          id="currency"
+          name="currency"
+          required #currency="ngModel">
+            <option value="USD" selected>USD</option>
+            <option value="EURO">EURO</option>
+            <option value="GBP">GBP</option>
+          </select>
+        <div [hidden]="!currency.pristine" class="alert alert-danger">Currency is required</div>
+      </div>
+      <div class="form-group">
+        <label for="destination">Destination Account Number</label>
+        <input type="number" [(ngModel)]="payment.destinationAccountNumber"
+          class="form-control"
+          id="destination"
+          name="destination"
+          placeholder="Enter your destination number"
+          required #destination="ngModel">
+        <div [hidden]="!destination.pristine" class="alert alert-danger">Destination number is required</div>
+      </div>
+      <div class="form-group">
+        <label for="source">Source Account Number</label>
+        <input type="number" [(ngModel)]="payment.sourceAccountNumber"
+          class="form-control"
+          id="source"
+          name="source"
+          placeholder="Enter your source number"
+          required #source="ngModel">
+        <div [hidden]="!source.pristine" class="alert alert-danger">Source number is required</div>
+      </div>
+      <div class="form-group">
+        <label for="description">Payment Description</label>
+        <input type="text" [(ngModel)]="payment.paymentDescription"
+          class="form-control"
+          id="description"
+          name="description"
+          placeholder="Enter payment description"
+          #description="ngModel">
+      </div>
+      <button type="submit" [disabled]="!paymentForm.form.valid"
+        class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>

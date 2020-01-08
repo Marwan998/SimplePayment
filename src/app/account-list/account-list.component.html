@@ -1,0 +1,20 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th id="details" scope= "col">Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let account of accounts">
+          <td>{{ account.accountNumber }}</td>
+          <td>{{ account.accountHolderName }}</td>
+          <td><i id = "{{ account.id }}"(click)="onClick($event)"  class="fas fa-id-card"></i></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

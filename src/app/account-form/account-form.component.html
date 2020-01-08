@@ -1,0 +1,48 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #accountForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="account.accountHolderName"
+          class="form-control"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          required #name="ngModel">
+      </div>
+      <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div>
+      <div class="form-group">
+        <label for="number">Account Number</label>
+        <input type="number" [(ngModel)]="account.accountNumber"
+          class="form-control"
+          id="id"
+          name="id"
+          placeholder="Enter your account number"
+          ng-minlength=6
+          ng-maxlength=6
+          required #number="ngModel">
+      </div>
+      <div [hidden]="!number.pristine" class="alert alert-danger">Account number is required</div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="text" [(ngModel)]="account.accountHolderPhoneNumber"
+          class="form-control"
+          id="phone"
+          name="phone"
+          placeholder="Enter your phone number"
+          #phone="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="description">Account description</label>
+        <input type="text" [(ngModel)]="account.accountDescription"
+          class="form-control"
+          id="description"
+          name="description"
+          placeholder="Enter your account description"
+          #description="ngModel">
+      </div>
+      <button type="submit" [disabled]="!accountForm.form.valid"
+        class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
