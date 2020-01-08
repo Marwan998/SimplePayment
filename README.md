@@ -1,4 +1,6 @@
-# Angularclient
+# About
+This project is a simple payment system that contains an account class and a payment class on which you can create accounts and process payments between them.
+## Angularclient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
